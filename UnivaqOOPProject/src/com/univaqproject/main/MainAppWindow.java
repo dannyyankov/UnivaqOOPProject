@@ -141,6 +141,14 @@ public class MainAppWindow extends JFrame {
 	public void executeAnalysis() {
 		linksLine.setEditable(false);
 		//execute analysis
+
+		MySQLAccess dao = new MySQLAccess();
+	    try {
+			dao.readDataBase();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		linksLine.setText("");
 		linksLine.setEditable(true);
 	}
