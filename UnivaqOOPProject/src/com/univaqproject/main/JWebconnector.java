@@ -14,7 +14,7 @@ public class JWebconnector
 		UserAgent userAgent = new UserAgent();         //create new userAgent (headless browser)
 		userAgent.visit("http://blog.bg");          //visit link
 		
-		Element sitems = userAgent.doc.findEvery("<h3 class=r>").findEvery("<a>");  //find search result links
+		Element sitems = userAgent.doc.findEvery("<div>").findEvery("<a>");  //find search result links
 		System.out.println(sitems.getAt("href"));           //print results
 		
 		sitems = userAgent.doc.findFirst("<body>"); //find every text in body
